@@ -19,12 +19,27 @@ p, h1, h2, span, a{
 }
 /////////////////////////////////////////////////
 main{
-    background-image: url('../img/bg.jpg'); 
+    overflow: hidden;
+    /* background-image: url('../img/bg.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    overflow: hidden;
+    background-position: right;
+    background-attachment: fixed; */
+    &:before {
+        content: "";
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        background: url('../img/bg.jpg') no-repeat center right;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
     
     section.about, section.contact {
         height:100vh;
@@ -464,12 +479,9 @@ section.contact{
             flex-wrap: wrap;
             justify-content: space-between;
             overflow: hidden;
-            background-image: url('../img/bg.jpg'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
             border-bottom: 1px solid rgba($white, 0.3);
+            background-color: #369dd1;
+            
             img {
                 width:60px;
                 height: 35px;
